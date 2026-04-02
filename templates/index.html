@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FakeShield — AI Fake News Detector</title>
+  <meta name="description" content="Real-time fake news detection powered by machine learning and Google Fact Check API verification." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════ BACKGROUND ════════════════════ -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ═══════════════════ HEADER ════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">Fake<span class="accent">Shield</span></span>
+      </div>
+      <div class="header-badges">
+        <span class="badge badge-ai">AI-Powered</span>
+        <span class="badge badge-rt">Real-Time</span>
+        <span class="badge badge-fc">Fact-Check API</span>
+        <div class="status-dot" id="status-dot" title="System status"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════ HERO ══════════════════════════ -->
+  <main>
+    <section class="hero">
+      <h1 class="hero-title">
+        Detect Fake News<br/>
+        <span class="gradient-text">Instantly with AI + Fact-Checking</span>
+      </h1>
+      <p class="hero-sub">
+        Combines ensemble ML models with Google Fact Check Tools API for real-time
+        verification. Get a final verdict with HIGH, MEDIUM, or LOW confidence.
+      </p>
+    </section>
+
+    <!-- ═══════════════════ INPUT CARD ═══════════════════ -->
+    <section class="card input-card">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="step-badge">01</span>
+          Paste News Text
+        </div>
+        <span class="word-counter" id="word-counter">0 / 10,000 chars</span>
+      </div>
+
+      <textarea
+        id="news-input"
+        class="news-textarea"
+        placeholder="Paste or type your news article, headline, or social media post here…&#10;&#10;Example: 'SHOCKING: Scientists discover cure for all diseases hidden by Big Pharma!'"
+        maxlength="10000"
+        spellcheck="true"
+        aria-label="News text input"
+      ></textarea>
+
+      <div class="input-footer">
+        <div class="example-buttons">
+          <span class="examples-label">Try an example:</span>
+          <button class="example-btn" data-example="fake" type="button">🔴 Fake sample</button>
+          <button class="example-btn" data-example="real" type="button">🟢 Real sample</button>
+        </div>
+        <button class="btn-analyze" id="analyze-btn" type="button">
+          <span class="btn-text">Check News</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ LOADING ══════════════════════ -->
+    <div class="loading-card" id="loading-card" aria-live="polite" aria-busy="true" hidden>
+      <div class="spinner"></div>
+      <div class="loading-stages">
+        <span class="stage active" id="stage-1">Preprocessing text…</span>
+        <span class="stage" id="stage-2">Running ML ensemble…</span>
+        <span class="stage" id="stage-3">Querying Google Fact Check API…</span>
+        <span class="stage" id="stage-4">Applying decision logic…</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ RESULT CARD ══════════════════ -->
+    <section class="card result-card" id="result-card" hidden aria-live="polite">
+
+      <!-- Final Verdict Banner -->
+      <div class="verdict-banner" id="verdict-banner">
+        <div class="verdict-icon" id="verdict-icon" aria-hidden="true"></div>
+        <div class="verdict-text">
+          <div class="verdict-label" id="verdict-label">—</div>
+          <div class="verdict-sub" id="verdict-sub">—</div>
+        </div>
+        <div class="verdict-confidence">
+          <div class="confidence-tier" id="confidence-tier">—</div>
+          <div class="conf-label">Confidence</div>
+        </div>
+      </div>
+
+      <!-- Confidence Reason -->
+      <div class="reason-bar" id="reason-bar">
+        <span class="reason-icon">💡</span>
+        <span class="reason-text" id="reason-text">—</span>
+      </div>
+
+      <!-- Model Agreement Indicator -->
+      <div class="agreement-bar" id="agreement-bar">
+        <div class="agreement-header">
+          <span class="detail-title"><span>🤖</span> Model Agreement</span>
+          <span class="agreement-badge" id="agreement-badge">—</span>
+        </div>
+        <div class="agreement-models" id="agreement-models"></div>
+      </div>
+
+      <!-- SHAP Explanation Panel: Highlighted Text -->
+      <div class="detail-card explanation-card" id="explanation-card">
+        <div class="detail-title">
+          <span>🧠</span> AI Explanation — Why this verdict?
+          <span class="shap-method-badge" id="shap-method">—</span>
+        </div>
+        <div class="explanation-text" id="explanation-text">
+          <span class="detail-empty">Submit text to see word-level explanations</span>
+        </div>
+        <div class="explanation-legend">
+          <span class="legend-item"><span class="legend-dot legend-fake"></span> Pushes toward Fake</span>
+          <span class="legend-item"><span class="legend-dot legend-real"></span> Pushes toward Real</span>
+        </div>
+      </div>
+
+      <!-- Probability bars -->
+      <div class="prob-bars">
+        <div class="prob-row">
+          <span class="prob-label">🟢 Real</span>
+          <div class="prob-bar-track">
+            <div class="prob-bar prob-bar-real" id="bar-real"></div>
+          </div>
+          <span class="prob-pct" id="pct-real">—%</span>
+        </div>
+        <div class="prob-row">
+          <span class="prob-label">🔴 Fake</span>
+          <div class="prob-bar-track">
+            <div class="prob-bar prob-bar-fake" id="bar-fake"></div>
+          </div>
+          <span class="prob-pct" id="pct-fake">—%</span>
+        </div>
+      </div>
+
+      <!-- Grid: keywords + fact-check -->
+      <div class="detail-grid">
+
+        <!-- Keywords panel -->
+        <div class="detail-card">
+          <div class="detail-title">
+            <span>🔍</span> Key Influencing Terms
+          </div>
+          <div class="keyword-cloud" id="keyword-cloud">
+            <span class="detail-empty">No keywords available</span>
+          </div>
+        </div>
+
+        <!-- Fact-check panel -->
+        <div class="detail-card" id="factcheck-panel">
+          <div class="detail-title">
+            <span>🌐</span> Google Fact-Check Results
+          </div>
+          <div class="factcheck-body" id="factcheck-body">
+            <span class="detail-empty">Fact-check results will appear here</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Model info footer -->
+      <div class="result-footer">
+        <span class="model-badge" id="model-badge">—</span>
+        <button class="btn-reset" id="reset-btn" type="button">Analyze Another →</button>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════ ERROR CARD ════════════════════ -->
+    <div class="error-card" id="error-card" hidden role="alert">
+      <span class="error-icon">⚠️</span>
+      <span class="error-msg" id="error-msg">Something went wrong.</span>
+    </div>
+
+    <!-- ═══════════════════ FEATURE PILLS ═════════════════ -->
+    <section class="features">
+      <div class="feature-pill">
+        <span>⚡</span> Real-Time Detection
+      </div>
+      <div class="feature-pill">
+        <span>🤖</span> Ensemble ML Models
+      </div>
+      <div class="feature-pill">
+        <span>🌐</span> Google Fact-Check API
+      </div>
+      <div class="feature-pill">
+        <span>📊</span> High/Medium/Low Confidence
+      </div>
+      <div class="feature-pill">
+        <span>🔍</span> Keyword Explainability
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════ FOOTER ════════════════════════ -->
+  <footer class="site-footer">
+    <p>FakeShield — Research Platform &nbsp;·&nbsp; Large-Scale Fake News Propagation Modeling</p>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

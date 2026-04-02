@@ -1,0 +1,38 @@
+================================================================================
+SOCIAL NETWORK ANALYSIS REPORT
+================================================================================
+
+NETWORK STATISTICS
+--------------------------------------------------------------------------------
+Number of Nodes: 15
+Number of Edges: 78
+Average Degree: 5.20
+Network Density: 0.3714
+Total Edge Weight: 78
+
+TIME RANGE
+--------------------------------------------------------------------------------
+Start: 2024-01-15 10:30:00
+End: 2024-01-16 12:30:00
+Number of Posts: 15
+
+TOP 10 INFLUENTIAL SPREADERS
+--------------------------------------------------------------------------------
+ 1. user010    - Influence Score: 0.6000
+ 2. user006    - Influence Score: 0.6000
+ 3. user002    - Influence Score: 0.6000
+ 4. user014    - Influence Score: 0.6000
+ 5. user004    - Influence Score: 0.6000
+ 6. user008    - Influence Score: 0.6000
+ 7. user012    - Influence Score: 0.6000
+ 8. user013    - Influence Score: 0.5500
+ 9. user011    - Influence Score: 0.3842
+10. user009    - Influence Score: 0.2597
+
+CENTRALITY STATISTICS
+--------------------------------------------------------------------------------
+Degree Centrality - Mean: 0.3714, Std: 0.2024, Max: 0.5714
+In-Degree - Mean: 0.3714, Std: 0.1113, Max: 0.5714
+Closeness - Mean: 0.4092, Std: 0.2296, Max: 0.6364
+
+================================================================================

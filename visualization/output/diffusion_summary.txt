@@ -1,0 +1,39 @@
+================================================================================
+DIFFUSION TRAJECTORY ANALYSIS REPORT
+================================================================================
+
+Infection Probability: 0.1
+--------------------------------------------------------------------------------
+  Duration (timesteps): 31
+  Peak Infected: 11 at time 13
+  Final Recovered: 10
+  Final Susceptible: 0
+  Total Spread Rate: 32.26%
+  Average Infected: 6.39
+
+Infection Probability: 0.2
+--------------------------------------------------------------------------------
+  Duration (timesteps): 31
+  Peak Infected: 12 at time 4
+  Final Recovered: 10
+  Final Susceptible: 0
+  Total Spread Rate: 32.26%
+  Average Infected: 8.29
+
+Infection Probability: 0.3
+--------------------------------------------------------------------------------
+  Duration (timesteps): 31
+  Peak Infected: 14 at time 6
+  Final Recovered: 12
+  Final Susceptible: 0
+  Total Spread Rate: 38.71%
+  Average Infected: 6.94
+
+CROSS-SCENARIO COMPARISON
+================================================================================
+Highest Peak Infection: 14 (Prob: 0.3)
+Lowest Peak Infection: 11 (Prob: 0.1)
+Highest Final Spread: 12 (Prob: 0.3)
+Lowest Final Spread: 10 (Prob: 0.1)
+
+================================================================================

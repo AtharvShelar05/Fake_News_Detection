@@ -1,0 +1,10 @@
+=== TEST 1: /health ===
+  explainer_ready: True
+  fact_check_api: True
+  init_error: None
+  models_loaded: True
+  status: ok
+
+=== TEST 2: Indian politics news ===
+
+ERROR: timed out

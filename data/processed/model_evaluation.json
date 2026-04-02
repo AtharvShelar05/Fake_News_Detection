@@ -1,0 +1,77 @@
+{
+  "evaluation_date": "2026-02-11T14:02:03.438566",
+  "dataset_info": {
+    "total_samples": 15,
+    "training_samples": 12,
+    "test_samples": 3,
+    "class_distribution": {
+      "real_news": 8,
+      "fake_news": 7
+    }
+  },
+  "baseline_model": {
+    "type": "TF-IDF + Logistic Regression",
+    "clean_test_performance": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "dataset": "Clean Test",
+      "samples": 3
+    },
+    "adversarial_performance": {
+      "synonym": {
+        "clean_accuracy": 1.0,
+        "adversarial_accuracy": 1.0,
+        "robustness_drop_percent": 0.0
+      },
+      "character": {
+        "clean_accuracy": 1.0,
+        "adversarial_accuracy": 1.0,
+        "robustness_drop_percent": 0.0
+      },
+      "paraphrase": {
+        "clean_accuracy": 1.0,
+        "adversarial_accuracy": 1.0,
+        "robustness_drop_percent": 0.0
+      }
+    },
+    "average_robustness_drop": 0.0
+  },
+  "robust_model": {
+    "type": "Embeddings + Adversarial Training",
+    "clean_test_performance": {
+      "accuracy": 0.6666666666666666,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "dataset": "Clean Test",
+      "samples": 3
+    },
+    "adversarial_performance": {
+      "synonym": {
+        "clean_accuracy": 0.6666666666666666,
+        "adversarial_accuracy": 0.6666666666666666,
+        "robustness_drop_percent": 0.0
+      },
+      "character": {
+        "clean_accuracy": 0.6666666666666666,
+        "adversarial_accuracy": 0.6666666666666666,
+        "robustness_drop_percent": 0.0
+      },
+      "paraphrase": {
+        "clean_accuracy": 0.6666666666666666,
+        "adversarial_accuracy": 0.6666666666666666,
+        "robustness_drop_percent": 0.0
+      }
+    },
+    "average_robustness_drop": 0.0
+  },
+  "comparative_analysis": {
+    "clean_accuracy_improvement": -0.33333333333333337,
+    "robustness_improvement": 0.0,
+    "baseline_avg_robustness_drop_percent": 0.0,
+    "robust_avg_robustness_drop_percent": 0.0,
+    "recommendation": "Compare trade-offs"
+  }
+}

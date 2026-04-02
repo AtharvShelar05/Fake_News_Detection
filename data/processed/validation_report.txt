@@ -1,0 +1,25 @@
+
+============================================================
+DATA VALIDATION REPORT
+============================================================
+
+required_columns: [PASS]
+
+null_values: [PASS]
+
+label_consistency: [PASS]
+
+data_types: [PASS]
+
+text_quality: [PASS]
+  avg_length: 57.6
+  min_length: 52
+  max_length: 65
+  empty_texts: 0
+  short_texts: 0
+
+duplicates: [PASS]
+
+------------------------------------------------------------
+OVERALL STATUS: [OK] ALL CHECKS PASSED
+============================================================

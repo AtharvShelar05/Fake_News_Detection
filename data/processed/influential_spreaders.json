@@ -1,0 +1,64 @@
+{
+  "top_spreaders": [
+    {
+      "user_id": "user010",
+      "influence_score": 0.6
+    },
+    {
+      "user_id": "user006",
+      "influence_score": 0.6
+    },
+    {
+      "user_id": "user002",
+      "influence_score": 0.6
+    },
+    {
+      "user_id": "user014",
+      "influence_score": 0.6
+    },
+    {
+      "user_id": "user004",
+      "influence_score": 0.6
+    },
+    {
+      "user_id": "user008",
+      "influence_score": 0.6
+    },
+    {
+      "user_id": "user012",
+      "influence_score": 0.6
+    },
+    {
+      "user_id": "user013",
+      "influence_score": 0.55
+    },
+    {
+      "user_id": "user011",
+      "influence_score": 0.3842200121111648
+    },
+    {
+      "user_id": "user009",
+      "influence_score": 0.259671783352053
+    },
+    {
+      "user_id": "user015",
+      "influence_score": 0.22217178335205298
+    },
+    {
+      "user_id": "user001",
+      "influence_score": 0.2034132035442406
+    },
+    {
+      "user_id": "user005",
+      "influence_score": 0.1272151503806315
+    },
+    {
+      "user_id": "user007",
+      "influence_score": 0.04274148259078997
+    },
+    {
+      "user_id": "user003",
+      "influence_score": 0.0
+    }
+  ]
+}

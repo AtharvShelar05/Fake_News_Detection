@@ -1,0 +1,70 @@
+================================================================================
+INFLUENCE AND CENTRALITY ANALYSIS REPORT
+================================================================================
+
+TOP 15 INFLUENTIAL SPREADERS
+--------------------------------------------------------------------------------
+ 1. user010    - Influence Score: 0.600000
+ 2. user006    - Influence Score: 0.600000
+ 3. user002    - Influence Score: 0.600000
+ 4. user014    - Influence Score: 0.600000
+ 5. user004    - Influence Score: 0.600000
+ 6. user008    - Influence Score: 0.600000
+ 7. user012    - Influence Score: 0.600000
+ 8. user013    - Influence Score: 0.550000
+ 9. user011    - Influence Score: 0.384220
+10. user009    - Influence Score: 0.259672
+11. user015    - Influence Score: 0.222172
+12. user001    - Influence Score: 0.203413
+13. user005    - Influence Score: 0.127215
+14. user007    - Influence Score: 0.042741
+15. user003    - Influence Score: 0.000000
+
+INFLUENCE SCORE STATISTICS
+--------------------------------------------------------------------------------
+Mean: 0.399296
+Median: 0.550000
+Std Dev: 0.224313
+Min: 0.000000
+Max: 0.600000
+Range: 0.600000
+
+CENTRALITY STATISTICS
+--------------------------------------------------------------------------------
+
+degree_centrality:
+  Mean: 0.371429
+  Median: 0.285714
+  Std Dev: 0.202367
+  Min: 0.000000
+  Max: 0.571429
+
+in_degree_centrality:
+  Mean: 0.371429
+  Median: 0.428571
+  Std Dev: 0.111270
+  Min: 0.142857
+  Max: 0.571429
+
+closeness_centrality:
+  Mean: 0.409192
+  Median: 0.350000
+  Std Dev: 0.229579
+  Min: 0.000000
+  Max: 0.636364
+
+eigenvector_centrality:
+  Mean: 0.176383
+  Median: 0.000001
+  Std Dev: 0.188562
+  Min: 0.000000
+  Max: 0.377964
+
+betweenness_centrality:
+  Mean: 0.035165
+  Median: 0.000000
+  Std Dev: 0.059323
+  Min: 0.000000
+  Max: 0.210754
+
+================================================================================

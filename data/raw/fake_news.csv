@@ -1,0 +1,16 @@
+text,label,user_id,timestamp
+"Breaking News: Scientists discover new cure for disease",0,user001,2024-01-15 10:30:00
+"SHOCKING: Celebrities caught in fake scandal spreading online",1,user002,2024-01-15 11:15:00
+"Government announces new policy updates for citizens",0,user003,2024-01-15 12:00:00
+"URGENT: This viral claim about vaccine side effects is FALSE",1,user004,2024-01-15 13:45:00
+"Research Study: Effects of social media on mental health revealed",0,user005,2024-01-15 14:20:00
+"FAKE NEWS ALERT: Do NOT believe this about elections",1,user006,2024-01-15 15:30:00
+"New Economic Report Shows Strong Growth in Tech Sector",0,user007,2024-01-15 16:00:00
+"HOAX: Ancient alien artifacts found underground exposed",1,user008,2024-01-15 17:15:00
+"Climate Scientists Release New Global Warming Data Analysis",0,user009,2024-01-15 18:45:00
+"MISLEADING: Conspiracy theory about water sources debunked",1,user010,2024-01-15 19:30:00
+"Study Confirms Benefits of Regular Exercise and Healthy Diet",0,user011,2024-01-16 08:00:00
+"FALSE CLAIM: This celebrity death rumor is completely fabricated",1,user012,2024-01-16 09:30:00
+"Local News: Community Center Opens New Youth Programs",0,user013,2024-01-16 10:15:00
+"FAKE: These leaked documents are manipulated and doctored",1,user014,2024-01-16 11:00:00
+"Medical Breakthrough: New treatment shows promise in trials",0,user015,2024-01-16 12:30:00

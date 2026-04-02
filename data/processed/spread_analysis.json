@@ -1,0 +1,62 @@
+{
+  "user010": {
+    "source_node": "user010",
+    "directly_reachable": 8,
+    "total_reachable": 14,
+    "hop_distribution": {
+      "0": 1,
+      "1": 8,
+      "2": 4,
+      "3": 2
+    },
+    "reachability_rate": 1.0
+  },
+  "user006": {
+    "source_node": "user006",
+    "directly_reachable": 8,
+    "total_reachable": 14,
+    "hop_distribution": {
+      "0": 1,
+      "1": 8,
+      "2": 4,
+      "3": 2
+    },
+    "reachability_rate": 1.0
+  },
+  "user002": {
+    "source_node": "user002",
+    "directly_reachable": 8,
+    "total_reachable": 14,
+    "hop_distribution": {
+      "0": 1,
+      "1": 8,
+      "2": 4,
+      "3": 2
+    },
+    "reachability_rate": 1.0
+  },
+  "user014": {
+    "source_node": "user014",
+    "directly_reachable": 8,
+    "total_reachable": 14,
+    "hop_distribution": {
+      "0": 1,
+      "1": 8,
+      "2": 4,
+      "3": 2
+    },
+    "reachability_rate": 1.0
+  },
+  "user004": {
+    "source_node": "user004",
+    "directly_reachable": 8,
+    "total_reachable": 14,
+    "hop_distribution": {
+      "0": 1,
+      "1": 8,
+      "2": 4,
+      "3": 2
+    },
+    "reachability_rate": 1.0
+  }
+}
